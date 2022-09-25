@@ -3,6 +3,7 @@ import express from 'express';
 import {sequelize} from './sequelize';
 
 import {IndexRouter} from './controllers/v0/index.router';
+import { addUser, loginUser } from './controllers/v0/users/routes/auth.router'
 
 import bodyParser from 'body-parser';
 import {config} from './config/config';
@@ -48,4 +49,6 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
     console.log( `server running ${config.url}` );
     console.log( `press CTRL+C to stop server` );
   } );
+  await addUser("OchemLinda@gmail.com", "linda");
+  await loginUser("OchemLinda@gmail.com", "linda");
 })();
