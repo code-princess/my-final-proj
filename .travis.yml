@@ -22,8 +22,8 @@ scripts:
   - docker tag udagram-api-user cleowoman/udagram-api-user:v1
   - docker build -t udagram-frontend ./udagram-frontend
   - docker tag udagram-frontend cleowoman/udagram-frontend:v1
-  - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy cleowoman/reverseproxy:v1
+  - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+  - docker tag udagram-reverseproxy cleowoman/udagram-reverseproxy:v1
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push cleowoman/udagram-api-user:v1
   - docker push cleowoman/udagram-api-feed:v1
